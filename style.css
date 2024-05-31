@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'YoungSerif';
+    font-size: 400;
+    src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+}
+
+
+
+@font-face {
+    font-family: 'Outfit';
+    font-weight: 400;
+    src: url('./assets/fonts/outfit/static/Outfit-Light.ttf') format('truetype');
+}
+
+
+
+@font-face {
+    font-family: 'Outfit';
+    font-weight: 600;
+    src: url('./assets/fonts/outfit/static/Outfit-Medium.ttf') format('truetype');
+}
+
+
+
+@font-face {
+    font-family: 'Outfit';
+    font-weight: 700;
+    src: url('./assets/fonts/outfit/static/Outfit-SemiBold.ttf') format('truetype');
+}
+
+
+/* Color variables */
+:root {
+    --primaryColor-nutmeg: hsl(14, 45%, 36%);
+    --secondaryColor-raspberry: hsl(332, 51%, 32%);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --roseWhite: hsl(330, 100%, 98%);
+    --eggshell: hsl(30, 54%, 90%);
+    --lightGrey: hsl(30, 18%, 87%);
+    --wengeBrown: hsl(30, 10%, 34%);
+    --darkCharcoal: hsl(24, 5%, 18%);
+
+    /* Others */
+    --mobile: 375px;
+    --desktop: 750px;
+
+    /* Font */
+    --headerSize: 35px;
+    --subHeaderSize: 25px;
+}
+
+
+/* RESETS */
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    background-color: var(--eggshell);
+    padding: 40px;
+}
+
+main {
+    max-width: var(--desktop);
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 20px;
+}
+
+
+
+.omlette__image {
+    max-height: 450px;
+    max-width: 100%;
+    object-fit: cover;
+    padding: 40px;
+}
+
+.omlette__image img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 20px;
+}
+
+
+/* Main wrapper */
+.wrapper__section {
+    padding: 40px;
+}
+
+
+/* Wrapper title */
+.wrapper__title-header {
+    font-size: var(--headerSize);
+    font-family: 'YoungSerif', Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+
+
+/* Preparation time*/
+.wrapper__preparation {
+    font-size: large;
+    font-weight: lighter;
+    margin: 0;
+    padding: 0;
+    background-color: var(--roseWhite);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.wrapper__preparation h2 {
+    color: var(--secondaryColor-raspberry);
+}
+
+
+.wrapper__preparation ul {
+    line-height: 30px;
+    list-style-position: outside;
+    margin-left: -20px;
+}
+
+
+.wrapper__preparation ul span {
+    font-weight: 700;
+}
+
+
+
+/* Wrapper ingredients */
+.wrapper__ingredients ul {
+    line-height: 30px;
+    list-style-position: outside;
+    margin-left: -20px;
+    margin-top: -15px;
+    color: var(--primaryColor-nutmeg);
+}
+
+
+
+
+.wrapper__ingredients h2 {
+    font-size: var(--subHeaderSize);
+    font-family: 'YoungSerif';
+    color: var(--primaryColor-nutmeg);
+}
+
+
+/* Wrapper instructions list */
+.wrapper__instructions-list {
+    line-height: 30px;
+    list-style-position: outside;
+    margin-left: -35px;
+    margin-top: -15px;
+
+    list-style-type: none;
+    counter-reset: item;
+}
+
+.wrapper__instructions-list li {
+    counter-increment: item;
+    line-height: 25px;
+    margin-top: 10px;
+}
+
+
+.wrapper__instructions-list li span {
+    font-weight: bold;
+}
+
+
+
+
+.wrapper__instructions-list li::before {
+    content: counter(item) ". ";
+    color: var(--primaryColor-nutmeg);
+    font-size: larger;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+
+
+
+.bordered-bottom {
+    border-bottom: .5px solid lightgray;
+    padding-bottom: 20px;
+}
+
+
+
+
+/* Wrapper nutrients */
+.wrapper__nutrients {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: .5px solid lightgray;
+    padding: 10px 0 10px 20px;
+}
+
+.wrapper__nutrients span {
+    display: flex;
+    flex: 1;
+}
+
+.wrapper__nutrients-value {
+    color: var(--primaryColor-nutmeg);
+    font-weight: bold;
+}
+
+
+/*  */
+@media (max-width: 700px) {
+    main {
+        border-radius: 0;
+        margin: 0;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    /* Image divs */
+    .omlette__image {
+        padding: 0;
+    }
+
+    .omlette__image img {
+        border-radius: 0;
+    }
+
+    .wrapper__section {
+        padding: 15px;
+    }
+}
